@@ -29,6 +29,13 @@ class Calculadora{
 
 int main()
 {
-	int a = mostrarSuma(1,1);
+	Calculadora a;
+	
+	int b = a.mostrarSuma(1,1);
+	cout << b << endl;
+	
+	int c = a.mostrarResta(1,1);
+	cout << c << endl;
+	
 	return 0;
 }
