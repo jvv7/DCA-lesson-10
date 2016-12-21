@@ -29,5 +29,6 @@ class Calculadora{
 
 int main()
 {
+	int a = mostrarSuma(1,1);
 	return 0;
 }
