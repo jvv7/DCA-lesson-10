@@ -38,7 +38,7 @@ int main()
 	cout << c << endl;
 	
 	int d = a.mostrarDivision(2,1);
-	cout << d << el;
+	cout << d << endl;
 	
 	int e = a.mostrarProducto(4,4);
 	cout << e << endl;
