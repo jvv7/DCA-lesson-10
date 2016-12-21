@@ -37,8 +37,11 @@ int main()
 	int c = a.mostrarResta(1,1);
 	cout << c << endl;
 	
-	int c = a.mostrarDivision(2,1);
-	cout << c << el;
+	int d = a.mostrarDivision(2,1);
+	cout << d << el;
+	
+	int e = a.mostrarProducto(4,4);
+	cout << e << endl;
 	
 	return 0;
 }
