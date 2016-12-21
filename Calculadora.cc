@@ -37,5 +37,8 @@ int main()
 	int c = a.mostrarResta(1,1);
 	cout << c << endl;
 	
+	int c = a.mostrarDivision(2,1);
+	cout << c << el;
+	
 	return 0;
 }
