@@ -1,0 +1,53 @@
+[alu@arch-eps lesson10]$ git bisect start
+[alu@arch-eps lesson10]$ git bisect bad
+[alu@arch-eps lesson10]$ git log --online
+fatal: unrecognized argument: --online
+[alu@arch-eps lesson10]$ git log --oneline
+091a5a0 comit con otra funcionalidad
+957d4e3 comit con error
+f3ef77e Añadido nueva prueba al programa
+b9400bc programa inicial con una operacion
+24044f0 añadido el programa inicial
+59c1340 first commit
+[alu@arch-eps lesson10]$ git bisect good 59c1340
+Bisecting: 2 revisions left to test after this (roughly 1 step)
+[b9400bc6e5abda0eea78bdc0dfb3458235648177] programa inicial con una operacion
+[alu@arch-eps lesson10]$ git status
+HEAD detached at b9400bc
+You are currently bisecting, started from branch 'master'.
+  (use "git bisect reset" to get back to the original branch)
+
+nothing to commit, working tree clean
+[alu@arch-eps lesson10]$ g++ Calculadora.cc 
+Calculadora.cc: En la función ‘int main()’:
+Calculadora.cc:32:25: error: ‘mostrarSuma’ no se declaró en este ámbito
+  int a = mostrarSuma(1,1);
+                         ^
+[alu@arch-eps lesson10]$ git bisect good
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[957d4e3987916c4c76e9f37be94215ad50080678] comit con error
+[alu@arch-eps lesson10]$ g++ Calculadora.cc 
+Calculadora.cc: En la función ‘int main()’:
+Calculadora.cc:40:6: error: redeclaración de ‘int c’
+  int c = a.mostrarDivision(2,1);
+      ^
+Calculadora.cc:37:6: nota: ‘int c’ previously declared here
+  int c = a.mostrarResta(1,1);
+      ^
+Calculadora.cc:41:15: error: ‘el’ no se declaró en este ámbito
+  cout << c << el;
+               ^~
+[alu@arch-eps lesson10]$ git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[f3ef77e403d3c5dba5d64077948b7cb55482ae9e] Añadido nueva prueba al programa
+[alu@arch-eps lesson10]$ g++ Calculadora.cc 
+[alu@arch-eps lesson10]$ git bisect log
+git bisect start
+# bad: [091a5a0875db82e1008f4c58060bbd788a415941] comit con otra funcionalidad
+git bisect bad 091a5a0875db82e1008f4c58060bbd788a415941
+# good: [59c13403edfceed0f2a135406955f442cdf7f90f] first commit
+git bisect good 59c13403edfceed0f2a135406955f442cdf7f90f
+# good: [b9400bc6e5abda0eea78bdc0dfb3458235648177] programa inicial con una operacion
+git bisect good b9400bc6e5abda0eea78bdc0dfb3458235648177
+# bad: [957d4e3987916c4c76e9f37be94215ad50080678] comit con error
+git bisect bad 957d4e3987916c4c76e9f37be94215ad50080678

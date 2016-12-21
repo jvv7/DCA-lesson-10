@@ -1,0 +1,26 @@
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   Calculadora.cc
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[alu@arch-eps lesson10]$ git add .
+[alu@arch-eps lesson10]$ git commit -m "git hooks huebo"
+Calculadora.cc:48: trailing whitespace.
++	
+[alu@arch-eps lesson10]$ git push
+Username for 'https://github.com': jvv7
+Password for 'https://jvv7@github.com': 
+Everything up-to-date
+
+
+
+git commit -m "añadida documentacion"
+Calculadora.cc:48: trailing whitespace.
++	
+gitbisect:21: trailing whitespace.
++[alu@arch-eps lesson10]$ g++ Calculadora.cc 
+gitbisect:29: trailing whitespace.
++[alu@arch-eps lesson10]$ g++ Calculadora.cc 
+gitbisect:43: trailing whitespace.
++[alu@arch-eps lesson10]$ g++ Calculadora.cc 
+githooks:9: trailing whitespace.

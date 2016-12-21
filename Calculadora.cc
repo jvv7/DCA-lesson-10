@@ -43,5 +43,8 @@ int main()
 	int e = a.mostrarProducto(4,4);
 	cout << e << endl;
 	
+	int e = a.mostrarProducto(4,4);
+	cout << e << endl;
+	
 	return 0;
 }
